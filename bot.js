@@ -114,9 +114,9 @@ client.on("message", async message => {
  
 
 client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find(channel => channel.name === "welcome");
+    const channel = member.guild.channels.find(channel => channel.name === "reception");
     if(!channel) return;
-    channel.send(`Welcome to Acorn, ${member.user}`)
+    channel.send(`Welcome to the University of Toronto Class of 2024, ${member.user}! Please read <#701631177060122647> to get started.`)
 });
 
 
