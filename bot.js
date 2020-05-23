@@ -126,7 +126,11 @@ client.on('message', message => {
 
 });
 
- 
+client.on("guildMemberAdd", member => {
+    let guild = member.guild;
+    guild.defaultChannel.sendMessage('Welcome ${member.user} to Acorn!')
+});
+
 
 // THIS  MUST  BE  THIS  WAY
 
