@@ -112,23 +112,11 @@ client.on("message", async message => {
   }
 });
  
-client.on('message', message => {
 
-    if (message.content === 'cope') {
-       message.channel.send("cope " + message.author);
-       }
-    if (message.content === 'Cope') {
-       message.channel.send("cope " + message.author);
-       }
-     if (message.content === 'blackpill') {
-       message.channel.send(":blackpill:");
-       }
-
-});
-
-client.on("guildMemberAdd", member => {
-    let guild = member.guild;
-    guild.defaultChannel.sendMessage('Welcome ${member.user} to Acorn!')
+client.on('guildMemberAdd', member => {
+    const channel = member.guild.channels.find(channel => channel.name === "welcome");
+    if(!channel) return;
+    channel.send('Welcome to Acorn, ${member}')
 });
 
 
