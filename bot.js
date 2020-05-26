@@ -74,6 +74,21 @@ client.on("message", async message => {
     // And we get the bot to say the thing: 
     message.channel.send(sayMessage);
   }
+    
+  msg = message.content.toLowerCase();
+  if (message.author.bot) return;
+  mention = message.mentions.users.first();
+  if(command === "notify") {
+    if(!message.member.roles.some(r=>["tank"].includes(r.name)) )
+      return message.reply("you have no power here");    const sayMessage = args.join(" ");
+      mentionMessage = message.content.slice(8).split(' ')
+      mentionMessage.shift()
+      mentionMessage = mentionMessage.join(' ')
+      mention.sendMessage (mentionMessage);
+      message.channel.send ("Notified!");
+      console.log(mentionMessage);
+
+  }
   
   if(command === "ban") {
     // Most of this command is identical to kick, except that here we'll only let admins do it.
