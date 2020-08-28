@@ -53,7 +53,7 @@ client.on("message", async message => {
 client.on('guildMemberAdd', member => {
     const channel = member.guild.channels.find(channel => channel.name === "lounge");
     if(!channel) return;
-    channel.send(`Welcome to the Calculus help server, ${member.user} :wave: Please read <#747571580430975078> to get started!`)
+    channel.send(`${member.user} welcome :wave: Check out <#747571580430975078> to get started!`)
 });
 
 
