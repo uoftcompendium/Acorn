@@ -51,7 +51,7 @@ client.on("message", async message => {
  
 
 client.on('guildMemberAdd', member => {
-    const channel = member.guild.channels.find(channel => channel.name === "lounge");
+    const channel = member.guild.channels.find(channel => channel.name === "welcome");
     if(!channel) return;
     channel.send(`${member.user} welcome :wave: Check out <#747571580430975078> to get started!`)
 });
